@@ -51,14 +51,14 @@ let wrapper: RenderResult,
   activeElement: HTMLElement,
   disabledElement: HTMLElement;
 describe("test Menu and MenuItem component", () => {
-  beforeEach(() => {
-    wrapper = render(generateMenu(testProps))
-    wrapper.container.append(createStyleFile())
-      menuElement = wrapper.getByTestId('test-menu')
-      activeElement = wrapper.getByText('active')
-      disabledElement = wrapper.getByText('disabled')
+    beforeEach(() => {
+      wrapper = render(generateMenu(testProps))
+      wrapper.container.append(createStyleFile())
+        menuElement = wrapper.getByTestId('test-menu')
+        activeElement = wrapper.getByText('active')
+        disabledElement = wrapper.getByText('disabled')
 
-  });
+    });
     it("Menu and MenuItem props", () => {
         expect(menuElement).toBeInTheDocument()
         expect(menuElement).toHaveClass('ango-menu test')
@@ -84,7 +84,6 @@ describe("test Menu and MenuItem component", () => {
         expect(menuElement).toHaveClass('menu-vertical')
     });
   it('dropdown subMenu', async () => {
-    expect(wrapper.queryByText('drop1')).not.toBeVisible()
     const dropdownElement = wrapper.getByText('dropdown')
     fireEvent.mouseEnter(dropdownElement)
     await waitFor(() => {

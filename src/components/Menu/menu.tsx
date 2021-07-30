@@ -31,18 +31,21 @@ const Menu: React.FC<MenuProps> = (props) => {
         'menu-vertical': mode === 'vertical',
         'menu-horizontal': mode !== 'vertical'
     })
+
     const handleClick = (index: string) => {
         setActive(index)
         if (onSelect) {
             onSelect(index)
         }
     }
+
     const passedContext: IMenuContext = {
         index: currentActive || '0',
         onSelect: handleClick,
         mode,
         defaultOpenSumMenus
     }
+
     const renderChildren = () => {
         return React.Children.map(children, (child, index) => {
             const childElement = child as React.FunctionComponentElement<MenuItemProps>
@@ -54,6 +57,7 @@ const Menu: React.FC<MenuProps> = (props) => {
             }
         })
     }
+    
     return (
         <ul className={classes} style={style} data-testid='test-menu'>
             <MenuContext.Provider value={passedContext}>
