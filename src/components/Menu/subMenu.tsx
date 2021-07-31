@@ -18,9 +18,9 @@ const SubMenu: React.FC<SubmenuProps> = ({index, title, children, className}) =>
     const openedSubMenus = context.defaultOpenSumMenus as Array<string>
     const isOpend = (index && context.mode === 'vertical') ? openedSubMenus.includes(index) : false
     const [menuOpen, setOpen] = useState(isOpend)
-
+    
     const classes = classNames('menu-item submenu-item', className, {
-        'is-active': context.index === index,
+        'is-active': context.index.split('-')[0] === index,
         'is-opened': menuOpen,
         'is-vertical': context.mode === 'vertical'
     })
