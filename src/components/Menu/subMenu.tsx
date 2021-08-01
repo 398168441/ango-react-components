@@ -1,8 +1,8 @@
 import React, { useContext, useState, FunctionComponentElement } from "react";
 import classNames from "classnames";
 
-import Icon from 'components/Icon/icon'
-import Transition from "components/Transition/transition";
+import Icon from '../Icon/icon'
+import Transition from "../Transition/transition";
 import { MenuContext } from './menu'
 import { MenuItemProps } from './menuItem'
 

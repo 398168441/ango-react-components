@@ -1,7 +1,6 @@
 
 import { action } from '@storybook/addon-actions';
 import { Meta } from '@storybook/react';
-import Button from 'components/Button/button';
 import Icon from 'components/Icon/icon';
 
 import Upload from './upload'

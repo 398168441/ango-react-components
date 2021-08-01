@@ -1,7 +1,7 @@
 import React from "react";
 import { UploadFile } from "./upload";
-import Icon from "components/Icon/icon";
-import Progress from "components/Progress/progress"
+import Icon from "../Icon/icon";
+import Progress from "../Progress/progress"
 
 interface UploadListProps {
     fileList: UploadFile[]
